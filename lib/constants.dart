@@ -12,3 +12,8 @@ const kActiveCardColour = Color(0xFF1D1E33);
 const kInActiveCardColour = Color(0xFF111328);
 const kBottomContainerColour = Color(0xFFEB1555);
 const kAppTitleBarText = 'BMI CALCULATOR';
+
+const kNumTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.w900,
+);
