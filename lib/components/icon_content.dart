@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import '../constants.dart';
 
 class IconContent extends StatelessWidget {
   static const iconSize = 80.0;
