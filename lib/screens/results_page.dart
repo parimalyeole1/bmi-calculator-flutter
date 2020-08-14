@@ -1,10 +1,15 @@
 import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/screens/input_page.dart';
 import 'package:flutter/material.dart';
 
 class ResultsPage extends StatelessWidget {
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+  ResultsPage({this.bmiResult, this.resultText, this.interpretation});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +23,8 @@ class ResultsPage extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Container(
+                padding: EdgeInsets.all(20.0),
+                alignment: Alignment.bottomLeft,
                 child: Text(
                   'Your Result',
                   style: kTitleTextStyle,
@@ -33,15 +40,15 @@ class ResultsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'OVERWEIGHT',
+                      resultText.toUpperCase(),
                       style: kResultTextStyle,
                     ),
                     Text(
-                      '18.3',
+                      bmiResult,
                       style: kBMITextStyle,
                     ),
                     Text(
-                      'Your BMI result is quit low, you should eat more.',
+                      interpretation,
                       textAlign: TextAlign.center,
                       style: kResultBodyTextStyle,
                     )
@@ -50,14 +57,9 @@ class ResultsPage extends StatelessWidget {
               ),
             ),
             BottomButton(
-              buttonTitle: 'RECALCULATE BMI',
+              buttonTitle: 'RE-CALCULATE',
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => InputPage(),
-                  ),
-                );
+                Navigator.pop(context);
               },
             )
           ],

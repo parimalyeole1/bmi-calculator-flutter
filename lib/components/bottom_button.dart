@@ -21,7 +21,7 @@ class BottomButton extends StatelessWidget {
             buttonTitle,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 18,
+              fontSize: 20,
             ),
           ),
         ),
